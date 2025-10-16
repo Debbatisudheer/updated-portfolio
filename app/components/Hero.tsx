@@ -7,16 +7,13 @@ export default function Hero() {
       id="home"
       className="relative flex flex-col justify-center items-start h-screen text-left overflow-hidden px-8 md:px-24 bg-[#0A192F]"
     >
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
-      >
-        <source src="/assets/bg-video.mp4" type="video/mp4" />
-      </video>
+      {/* Background Image */}
+<img
+  src="/assets/bg-image.jpg"
+  alt="Background"
+  className="absolute top-0 left-0 w-full h-full object-cover opacity-40"
+/>
+
 
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/60"></div>
@@ -48,7 +45,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
       >
-        Creating smart, scalable, and automated solutions <br />
+        Transforming ideas into intelligent, automated solutions. <br />
         <span className="text-[#64FFDA]">
           Blending Cloud, AI, and Full Stack innovation 🌐⚙️
         </span>
