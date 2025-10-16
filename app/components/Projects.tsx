@@ -7,24 +7,28 @@ export default function Projects() {
       title: "ECS-TASK-CHECKER – AWS Lambda (Go)",
       description:
         "Developed a Go-based AWS Lambda for ECS monitoring that analyzes stopped tasks via ECS APIs, triggers real-time PagerDuty alerts through Splunk webhooks, automates builds with Makefile, and is provisioned using Terraform.",
-      github: "https://github.com/Debbatisudheer/Ecs-task-checker/tree/ecs_task_checker2",
+      tech: "Go, AWS Lambda, ECS, Splunk, PagerDuty, Terraform, Makefile",
+      github:
+        "https://github.com/Debbatisudheer/Ecs-task-checker/tree/ecs_task_checker2",
       demo: "#",
       flowchart: "/assets/ecs-flowchart.png",
-      doc: "/assets/ecs-task-checker-doc.pdf", // 👈 Documentation link (PDF or external)
+      doc: "/assets/ecs-task-checker-doc.pdf",
     },
     {
-      title: "Security Service Exchange (SSE) Monitoring Dashboard",
+      title: "Terraform Modularised Deployment",
       description:
-        "Designed a Go-based monitoring system to collect, parse, and visualize SSE events in real time, integrating with CloudWatch metrics and SES alerts for proactive system insights.",
+        "Refactored monolithic Terraform templates into modular components (ALB, WAF, ECS, Datadog, Splunk, Infra) with isolated S3 states, selective module deployments, Jinja2-based environment automation, and Jenkins integration for dynamic image overrides and CI/CD execution.",
+      tech: "Terraform, Jenkins, AWS, S3, Jinja2, Python",
       github: "#",
       demo: "#",
       flowchart: "/assets/sse-diagram.png",
       doc: "/assets/sse-dashboard-doc.pdf",
     },
     {
-      title: "Network Automation Tool – Config Validator",
+      title: "Frontend Development (React.js Training Project)",
       description:
-        "Built a Python automation script for network device configuration validation using REST APIs, reducing manual verification time by 70% in Cisco environments.",
+        "Built micro-frontend applications using React.js and Webpack Module Federation. Implemented Cisco Magnet Design System for consistent UI across apps.",
+      tech: "React.js, Webpack, Cisco Magnet Design System, JavaScript, HTML, CSS",
       github: "#",
       demo: "#",
       flowchart: "/assets/network-validator-flow.png",
@@ -37,16 +41,20 @@ export default function Projects() {
       title: "Diabetes Prediction – Machine Learning",
       description:
         "Built an end-to-end ML pipeline using Python (pandas, numpy, scikit-learn, xgboost, seaborn, matplotlib, joblib) with model comparison, hyperparameter tuning, and a Streamlit dashboard for real-time predictions and performance visualization.",
-      github: "https://github.com/Debbatisudheer/Diabetes-mellitus-project",
+      tech: "Python, Pandas, scikit-learn, XGBoost, Streamlit, Matplotlib, Seaborn",
+      github:
+        "https://github.com/Debbatisudheer/Diabetes-mellitus-project",
       demo: "https://diabetes-mellitus-project-bnz5anrpsnlumh4tlxhvg3.streamlit.app/",
       flowchart: "/assets/workflow.png",
       doc: "/assets/diabetes-doc.pdf",
     },
     {
-      title: "CNN Stress Detection - Deep Learning",
+      title: "CNN Stress Detection – Deep Learning",
       description:
         "Developed and deployed a CNN and VGG16-based transfer learning model using TensorFlow/Keras and scikit-learn to classify stress from facial expressions (~60% accuracy), with preprocessing (grayscale, RGB, augmentation), callbacks, Git LFS model storage, and an interactive Streamlit app for real-time predictions hosted on Streamlit Cloud.",
-      github: "https://github.com/Debbatisudheer/cnn_stress_detection_project",
+      tech: "TensorFlow, Keras, scikit-learn, OpenCV, Streamlit, Python",
+      github:
+        "https://github.com/Debbatisudheer/cnn_stress_detection_project",
       demo: "https://cnnstressdetectionproject-lgdtggbwp6s2njmp5qpadg.streamlit.app/",
       flowchart: "/assets/pattern-search.png",
       doc: "/assets/pattern-tool-doc.pdf",
@@ -55,6 +63,7 @@ export default function Projects() {
       title: "Portfolio Website – React.js / Next.js & Tailwind",
       description:
         "Designed and developed a modern, responsive portfolio website using React.js, Next.js, TailwindCSS, and Framer Motion with smooth animations and optimized performance.",
+      tech: "Next.js, React.js, TailwindCSS, Framer Motion",
       github: "https://github.com/Debbatisudheer/updated-portfolio",
       demo: "#",
       flowchart: "/assets/portfolio-architecture.png",
@@ -63,7 +72,8 @@ export default function Projects() {
     {
       title: "Chat App – Real-time Messaging",
       description:
-        "A real-time chat application using WebSockets and Node.js with JWT authentication, message persistence, and sleek frontend built in React.",
+        "Built a real-time chat app using WebSockets and Node.js with JWT authentication, message persistence, and a sleek frontend in React.",
+      tech: "React.js, Node.js, WebSockets, JWT, Express, MongoDB",
       github: "#",
       demo: "#",
       flowchart: "/assets/chatapp-diagram.png",
@@ -87,6 +97,9 @@ export default function Projects() {
         <p className="mb-4 text-[#8892B0] text-sm leading-relaxed">
           {project.description}
         </p>
+
+        {/* ✅ Tech Stack Section */}
+        <p className="text-xs text-[#64FFDA] mb-4">{project.tech}</p>
 
         {/* Links Section */}
         <div className="flex flex-wrap gap-4 mt-4">
@@ -158,6 +171,7 @@ export default function Projects() {
     </section>
   );
 }
+
 
 
 
