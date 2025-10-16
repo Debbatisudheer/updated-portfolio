@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center items-center h-screen text-center overflow-hidden px-4"
+      className="relative flex flex-col justify-center items-start h-screen text-left overflow-hidden px-8 md:px-24 bg-[#0A192F]"
     >
       {/* Background Video */}
       <video
@@ -18,8 +18,8 @@ export default function Hero() {
         <source src="/assets/bg-video.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Greeting */}
       <motion.p
@@ -54,9 +54,9 @@ export default function Hero() {
         </span>
       </motion.h2>
 
-      {/* Action Buttons */}
+      {/* Buttons */}
       <motion.div
-        className="relative mt-10 flex flex-col sm:flex-row gap-6 z-10"
+        className="relative mt-10 flex flex-wrap gap-6 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}

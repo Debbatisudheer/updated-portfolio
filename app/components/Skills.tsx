@@ -6,7 +6,7 @@ export default function Skills() {
     { name: "Golang", icon: "🐹" },
     { name: "Python", icon: "🐍" },
     { name: "AWS", icon: "☁️" },
-    { name: "Lambda", icon: "⚙️" },
+    { name: "AI / ML", icon: "🧠" },
     { name: "DevOps", icon: "🛠️" },
     { name: "React.js", icon: "⚛️" },
     { name: "Next.js", icon: "🧭" },
