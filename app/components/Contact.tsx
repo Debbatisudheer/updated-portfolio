@@ -27,13 +27,12 @@ export default function Contact() {
         transition={{ duration: 1 }}
       >
         I’m always open to new projects, collaborations, or tech ideas.
-        Whether it’s about <span className="text-[#64FFDA]">Go, AWS</span>, or
-        automation — let’s connect and create something impactful together!
+         — let’s connect and create something impactful together!
       </motion.p>
 
       {/* Contact Button */}
       <motion.a
-        href="mailto:sudheer.debbati@example.com"
+        href="mailto:debbatisudheerpatel@gmail.com"
         className="inline-block border border-[#64FFDA] text-[#64FFDA] px-8 py-3 rounded-lg hover:bg-[#64FFDA] hover:text-[#0A192F] transition duration-300 font-medium"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

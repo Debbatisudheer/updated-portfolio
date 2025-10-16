@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const ciscoProjects = [
     {
-      title: "Event Collector – Error Reporting System",
+      title: "ECS-TASK-CHECKER – AWS Lambda (Go)",
       description:
-        "Developed an automated error collection and reporting system using AWS Lambda, S3, CloudWatch, and SES — implemented in Go for scalable event handling and log analysis.",
-      github: "#",
+        "Developed a Go-based AWS Lambda for ECS monitoring that analyzes stopped tasks via ECS APIs, triggers real-time PagerDuty alerts through Splunk webhooks, automates builds with Makefile, and is provisioned using Terraform.",
+      github: "https://github.com/Debbatisudheer/Ecs-task-checker/tree/ecs_task_checker2",
       demo: "#",
+      flowchart: "/assets/ecs-flowchart.png",
+      doc: "/assets/ecs-task-checker-doc.pdf", // 👈 Documentation link (PDF or external)
     },
     {
       title: "Security Service Exchange (SSE) Monitoring Dashboard",
@@ -16,6 +18,8 @@ export default function Projects() {
         "Designed a Go-based monitoring system to collect, parse, and visualize SSE events in real time, integrating with CloudWatch metrics and SES alerts for proactive system insights.",
       github: "#",
       demo: "#",
+      flowchart: "/assets/sse-diagram.png",
+      doc: "/assets/sse-dashboard-doc.pdf",
     },
     {
       title: "Network Automation Tool – Config Validator",
@@ -23,6 +27,8 @@ export default function Projects() {
         "Built a Python automation script for network device configuration validation using REST APIs, reducing manual verification time by 70% in Cisco environments.",
       github: "#",
       demo: "#",
+      flowchart: "/assets/network-validator-flow.png",
+      doc: "/assets/config-validator-doc.pdf",
     },
   ];
 
@@ -33,20 +39,26 @@ export default function Projects() {
         "Built an end-to-end ML pipeline using Python (pandas, numpy, scikit-learn, xgboost, seaborn, matplotlib, joblib) with model comparison, hyperparameter tuning, and a Streamlit dashboard for real-time predictions and performance visualization.",
       github: "https://github.com/Debbatisudheer/Diabetes-mellitus-project",
       demo: "https://diabetes-mellitus-project-bnz5anrpsnlumh4tlxhvg3.streamlit.app/",
+      flowchart: "/assets/workflow.png",
+      doc: "/assets/diabetes-doc.pdf",
     },
     {
-      title: "Network Pattern Search Tool",
+      title: "CNN Stress Detection - Deep Learning",
       description:
-        "Python + Go-powered multi-threaded tool that searches and matches patterns across network directories efficiently, improving lookup performance by 60%.",
-      github: "#",
-      demo: "#",
+        "Developed and deployed a CNN and VGG16-based transfer learning model using TensorFlow/Keras and scikit-learn to classify stress from facial expressions (~60% accuracy), with preprocessing (grayscale, RGB, augmentation), callbacks, Git LFS model storage, and an interactive Streamlit app for real-time predictions hosted on Streamlit Cloud.",
+      github: "https://github.com/Debbatisudheer/cnn_stress_detection_project",
+      demo: "https://cnnstressdetectionproject-lgdtggbwp6s2njmp5qpadg.streamlit.app/",
+      flowchart: "/assets/pattern-search.png",
+      doc: "/assets/pattern-tool-doc.pdf",
     },
     {
-      title: "Portfolio Website – Next.js & Tailwind",
+      title: "Portfolio Website – React.js / Next.js & Tailwind",
       description:
-        "A modern, responsive developer portfolio built using Next.js, TailwindCSS, and Framer Motion with dark/light mode support and smooth animations.",
-      github: "#",
+        "Designed and developed a modern, responsive portfolio website using React.js, Next.js, TailwindCSS, and Framer Motion with smooth animations and optimized performance.",
+      github: "https://github.com/Debbatisudheer/updated-portfolio",
       demo: "#",
+      flowchart: "/assets/portfolio-architecture.png",
+      doc: "/assets/portfolio-doc.pdf",
     },
     {
       title: "Chat App – Real-time Messaging",
@@ -54,6 +66,8 @@ export default function Projects() {
         "A real-time chat application using WebSockets and Node.js with JWT authentication, message persistence, and sleek frontend built in React.",
       github: "#",
       demo: "#",
+      flowchart: "/assets/chatapp-diagram.png",
+      doc: "/assets/chatapp-doc.pdf",
     },
   ];
 
@@ -74,14 +88,15 @@ export default function Projects() {
           {project.description}
         </p>
 
-        <div className="flex gap-4 mt-4">
+        {/* Links Section */}
+        <div className="flex flex-wrap gap-4 mt-4">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#64FFDA] underline hover:text-white transition"
           >
-            GitHub
+            Code
           </a>
           <a
             href={project.demo}
@@ -91,13 +106,29 @@ export default function Projects() {
           >
             Live Demo
           </a>
+          <a
+            href={project.flowchart}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#64FFDA] underline hover:text-white transition"
+          >
+            Flowchart
+          </a>
+          <a
+            href={project.doc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#64FFDA] underline hover:text-white transition"
+          >
+            Doc
+          </a>
         </div>
       </motion.div>
     ));
 
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-20 text-[#8892B0]">
-      {/* Cisco Projects Section */}
+      {/* Cisco Projects */}
       <motion.h2
         className="text-3xl font-bold text-[#64FFDA] mb-12 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -111,7 +142,7 @@ export default function Projects() {
         {renderProjects(ciscoProjects)}
       </div>
 
-      {/* Personal Projects Section */}
+      {/* Personal Projects */}
       <motion.h2
         className="text-3xl font-bold text-[#64FFDA] mb-12 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -127,5 +158,7 @@ export default function Projects() {
     </section>
   );
 }
+
+
 
 

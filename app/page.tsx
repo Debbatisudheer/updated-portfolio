@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import AIPrototypeWork from "./components/AIPrototypeWork"; 
 import ResearchAndBlogs from "./components/ResearchAndBlogs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -15,10 +16,12 @@ export default function Home() {
       <About />
       <Projects />
       <Skills />
+      <AIPrototypeWork /> 
       <ResearchAndBlogs />
       <Contact />
       <Footer />
     </main>
   );
 }
+
 

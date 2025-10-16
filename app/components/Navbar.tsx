@@ -1,25 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#0A192F]/80 backdrop-blur-sm z-50 shadow-lg dark:bg-white/10">
+    <nav className="fixed top-0 left-0 w-full bg-[#0A192F]/80 backdrop-blur-sm z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 className="text-[#64FFDA] text-2xl font-bold tracking-wide dark:text-[#0A192F]">
-          Sudheer<span className="text-white dark:text-[#64FFDA]">.Dev</span>
+        {/* ✅ Logo / Name */}
+        <h1 className="text-[#64FFDA] text-2xl font-bold tracking-wide">
+          Sudheer<span className="text-white">.Dev</span>
         </h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-[#CCD6F6] font-medium dark:text-[#0A192F]">
+        {/* ✅ Desktop Menu */}
+        <ul className="hidden md:flex space-x-8 text-[#CCD6F6] font-medium">
           <li><Link href="#home">Home</Link></li>
           <li><Link href="#about">About</Link></li>
           <li><Link href="#projects">Projects</Link></li>
@@ -27,19 +23,7 @@ export default function Navbar() {
           <li><Link href="#contact">Contact</Link></li>
         </ul>
 
-        {/* 🌗 Theme Toggle Button */}
-        {mounted && (
-          <button
-            onClick={() =>
-              setTheme(theme === "dark" ? "light" : "dark")
-            }
-            className="ml-6 px-3 py-2 rounded-full border border-[#64FFDA] hover:bg-[#64FFDA] hover:text-[#0A192F] dark:hover:bg-[#64FFDA] transition"
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </button>
-        )}
-
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Button */}
         <button
           className="md:hidden text-[#64FFDA] focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -47,6 +31,19 @@ export default function Navbar() {
           ☰
         </button>
       </div>
+
+      {/* ✅ Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-[#0A192F]/95 px-6 py-4">
+          <ul className="space-y-4 text-[#CCD6F6] font-medium">
+            <li><Link href="#home" onClick={() => setIsOpen(false)}>Home</Link></li>
+            <li><Link href="#about" onClick={() => setIsOpen(false)}>About</Link></li>
+            <li><Link href="#projects" onClick={() => setIsOpen(false)}>Projects</Link></li>
+            <li><Link href="#skills" onClick={() => setIsOpen(false)}>Skills</Link></li>
+            <li><Link href="#contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

@@ -5,9 +5,6 @@ export default function Footer() {
         © {new Date().getFullYear()}{" "}
         <span className="text-[#64FFDA] font-semibold">Sudheer Debbati</span> — All rights reserved.
       </p>
-      <p className="text-sm mt-2">
-        Built with ❤️ using Next.js, Tailwind CSS & Framer Motion.
-      </p>
     </footer>
   );
 }
