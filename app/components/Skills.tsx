@@ -7,10 +7,14 @@ export default function Skills() {
     { name: "Python", icon: "🐍" },
     { name: "AWS", icon: "☁️" },
     { name: "Lambda", icon: "⚙️" },
-    { name: "Docker", icon: "🐳" },
+    { name: "DevOps", icon: "🛠️" },
     { name: "React.js", icon: "⚛️" },
+    { name: "Next.js", icon: "🧭" },
     { name: "Tailwind CSS", icon: "💠" },
     { name: "Git & GitHub", icon: "🔧" },
+    { name: "Databases", icon: "🗄️" },
+     { name: "Monitoring & Alerting", icon: "📊" },
+    { name: "Scripting & Automation", icon: "🤖" },
   ];
 
   return (
